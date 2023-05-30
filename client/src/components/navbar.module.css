@@ -1,0 +1,18 @@
+.iconbox{
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+.momenthide{
+     display: none;   
+}
+@media screen and (min-width: 600px){
+    .iconbox{
+        display: none;
+    }
+    .momenthide{
+        display: flex;   
+   }
+}

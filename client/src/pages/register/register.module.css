@@ -1,0 +1,53 @@
+.registerWrapper{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 40px);
+    background-size: cover;
+   position: relative;
+   width:100%;
+    background-image:linear-gradient(rgba(223, 221, 221,0.4),rgba(223, 221, 221,0.5)),url("https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80");
+}
+.registerForm{
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+}
+.registerForm>label{
+    font-size:  'Arima', 'cursive';
+    margin-block: 0.5rem;
+    font-size: 20px;
+}
+.registerForm>input{
+    padding:10px;
+ 
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 1px solid white;
+
+}
+.registerForm>button{
+    cursor: pointer;
+    padding:5px;
+    font-size: 16px;
+}
+.loginButton{
+    background-color: rgb(238, 88, 238);
+    border-radius: 5px;
+    color:white;
+    margin-top: 0.5rem;
+    width: 50%;
+    align-self: center;
+}
+.registerButton{
+    background-color: teal;
+    border-radius: 5px;
+    color:white;
+    position: absolute;
+    top:80px;
+    right:20px;
+    
+    
+}

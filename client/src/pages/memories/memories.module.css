@@ -1,0 +1,74 @@
+.memoriesWrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    font-family: 'Arima', cursive;
+    margin-top: 60px;
+}
+.memoriestitle{
+    text-align: center;
+    color:indigo
+}
+.titletime{
+    display: flex;
+    
+    justify-content: space-between;
+}
+.titletime>p{
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 600;
+}
+.titletime>h4{
+    margin-left: 1rem;
+}
+.memoryCard{
+    /* width:32vw; */
+    margin: 1rem;
+    
+}
+.memoryCardImg{
+    border-radius: 0.3rem;
+    width:100%;
+    height:15rem;
+    background-size: auto;
+}
+.memoryCardDesc{
+    
+    overflow: hidden;
+    display: -webkit-box;
+   -webkit-line-clamp: 3;    
+   -webkit-box-orient: vertical;
+}
+.tagitem{
+    cursor:pointer;
+}
+.tagitem:hover{
+    color: indigo;
+}
+.tag{
+    display: flex;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.tag>li{
+    margin-left: 0.5rem;
+    color: rgb(98, 98, 240);
+}
+
+.iconbox{
+    border: none;
+    cursor: pointer;
+    
+}
+.iconbox:hover{
+    background: none;
+    color: rgb(192, 21, 21);
+}
+
+.likeIcon::after{
+    color: rgb(192, 21, 21);
+}
+.favedClass{
+    color: red;
+}

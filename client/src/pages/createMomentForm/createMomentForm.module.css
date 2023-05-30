@@ -1,0 +1,73 @@
+.formWrapper{
+    margin-top: 60px;
+    width: 100%;
+    background: rgba(223,221,221, 0.6);
+}
+.form{
+    /* background: linear-gradient(rgba(223, 221, 221,0.4), rgba(223,221,221, 0.6)); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: calc(100vh - 40px);
+    padding: 2rem;
+    min-width: 100px;
+    max-width: 800px;
+}
+.formmain{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.editicon{
+    font-size: 30px;
+    color: teal;
+}
+.iconWrapper{
+    display: grid;
+    place-content: center;
+    margin-bottom: 2rem;
+}
+
+.formmain>label{
+    font-family: 'Arima' , 'cursive';
+    font-weight: 800;
+    font-size: 20px;
+    padding: 0.2rem 0;
+}
+.formmain>input,textarea{
+    padding:0.8rem;
+    border-radius: 5px;
+    font-size: 17px;
+    color: rgba(6, 43, 41, 0.842);
+}
+.formmain>input,textarea:focus{
+    outline: none;
+    border:1px solid indigo;
+}
+.selectTag{
+    margin-block: 0.5rem;
+    padding: 0.6rem;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 20%;
+    cursor:pointer;
+}
+.uploadformgroup{
+    cursor: pointer;
+    color: teal;
+}
+.upload{
+    display: none;
+}
+.submit{
+    margin-top: 0.5rem;
+    width:4rem;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: teal;
+    color:whitesmoke;
+    align-self: center;
+    font-size: 16px;
+    cursor: pointer;
+}
