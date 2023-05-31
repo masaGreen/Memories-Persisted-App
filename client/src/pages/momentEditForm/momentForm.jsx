@@ -32,13 +32,13 @@ const MemoryEdit = ()=>{
             formData.append("uploadFile", file)
             data.image = fileName
             try {
-                await axios.put(`http://localhost:5000/api/${moment._id}`, data)
+                await axios.put(`http://localhost:8080/${moment._id}`, data)
                 navigate("/")
             } catch (error) {
                 setError(error)
             }
             try {
-                await axios.post("http://localhost:5000/api/imageupload", formData)
+                await axios.post("http://localhost:8080/api/imageupload", formData)
             } catch (error) {
                 setError(error)
             }

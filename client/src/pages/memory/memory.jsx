@@ -17,7 +17,7 @@ const Memory = () => {
 
   useEffect(()=>{
     const fetchAmoment = async()=>{
-      const res = await axios.get("http://localhost:5000/api/"+id)
+      const res = await axios.get("http://localhost:8080/"+id)
       setMemory(res.data)
     }
     fetchAmoment()
@@ -25,7 +25,7 @@ const Memory = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/${memory._id}`);
+      await axios.delete(`http://localhost:8080/api/${memory._id}`);
       navigate("/");
     } catch (error) {
       setError(error);

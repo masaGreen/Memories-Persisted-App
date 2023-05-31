@@ -23,7 +23,7 @@ const Memories = () => {
     dispatch({type:"LOAD_MOMENTS"})
     try {
         
-        const response = await axios.get(`http://localhost:5000/api/?tag=${tag}`)
+        const response = await axios.get(`http://localhost:8080/?tag=${tag}`)
         dispatch({type:"LOADING_SUCCESS", payload:response.data})
         
     } catch (error) {

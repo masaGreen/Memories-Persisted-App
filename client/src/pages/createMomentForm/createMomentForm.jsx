@@ -38,7 +38,7 @@ const CreateMoment = () => {
       data.image = filename;
 
       try {
-        await axios.post("http://localhost:5000/api", data);
+        await axios.post("http://localhost:8080/api", data);
         navigate("/");
         e.target.reset();
       } catch (error) {
@@ -47,14 +47,14 @@ const CreateMoment = () => {
 
       //post the data to backend
       try {
-        await axios.post("http://localhost:5000/api/imageupload", formData);
+        await axios.post("http://localhost:8080/imageupload", formData);
       } catch (error) {
         setError(error);
       }
     }
 
     try {
-      await axios.post("http://localhost:5000/api", data);
+      await axios.post("http://localhost:8080/", data);
       e.target.reset();
     } catch (error) {
       setError(error);
