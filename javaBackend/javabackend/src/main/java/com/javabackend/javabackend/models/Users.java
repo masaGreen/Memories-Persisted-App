@@ -1,6 +1,11 @@
 package com.javabackend.javabackend.models;
 
+import java.time.LocalDateTime;
+
+
+import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -12,13 +17,32 @@ public class Users {
     private String username;
     private String email;
     private String password;
+    @CreatedDate
+    private LocalDateTime createdAt;
+    @LastModifiedDate
+    private LocalDateTime updatedAt;
 
-
-    public Users(String id, String username, String email, String password) {
+   
+  
+    public Users(String id, String username, String email, String password, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
+        this.createdAt =  createdAt;
+        this.updatedAt = updatedAt;
+    }
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
     public String getUsername() {
         return username;

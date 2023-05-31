@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -30,11 +32,21 @@ public class AuthControllers {
     private AuthServices userService;
     
 
-    @GetMapping("test")
+    @GetMapping("/test")
     public List<Users> test(){
         return userService.getAllUsers();
     }
+    @DeleteMapping("/deleteById/{Id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteById(@PathVariable String Id) {
+        userService.deleteById(Id);
+    }
 
+    @DeleteMapping("/deleteAll")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteAll(){
+        userService.deleteAll();
+    }
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
     public Users registerUser(@RequestBody Users user){

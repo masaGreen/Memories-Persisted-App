@@ -53,4 +53,11 @@ public class AuthServices {
 
         return us;
     }
+
+    public void deleteAll() {
+        userRepo.deleteAll();
+    }
+    public void deleteById( String Id){
+        userRepo.deleteById(Id);
+    }
 }
