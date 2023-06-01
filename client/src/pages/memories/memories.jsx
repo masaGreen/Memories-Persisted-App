@@ -23,7 +23,7 @@ const Memories = () => {
     dispatch({type:"LOAD_MOMENTS"})
     try {
         
-        const response = await axios.get(`http://localhost:8080/?tag=${tag}`)
+        const response = await axios.get(`http://localhost:8080/api?tag=${tag}`)
         dispatch({type:"LOADING_SUCCESS", payload:response.data})
         
     } catch (error) {
@@ -32,12 +32,14 @@ const Memories = () => {
     }
     
   }, [dispatch,tag]);
-
+ 
   useEffect(() => {
     fetchMomentss();
-  }, [fetchMomentss]);
- 
-  const imageDirectory = "http://localhost:5000/";
+   
+  }, [fetchMomentss, ]);
+
+  const imageDirectory = "http://localhost:8080/";
+  // const imageDirectory = "http://localhost:5000/";
   return (
     <div className={memoryStyles.memoriesWrapper}>
       <div>
@@ -45,11 +47,11 @@ const Memories = () => {
         <Grid container>
           {isFetching && <h2>Loading Moments</h2>}
 
-          {error && <h2>error fetching memories, {error}</h2>}
+          {error && <h2>error fetching memories, {error.message}</h2>}
           {moments.length > 0 ? (
             moments.map((memory) => {
               return (
-                <Grid item xs={12} sm={12} md={6} key={memory._id}>
+                <Grid item xs={12} sm={12} md={6} key={memory.id} >
                   <div className={memoryStyles.memoryCard}>
                     <div className={memoryStyles.titletime}>
                       <h4 className={memoryStyles.memoryCardTitle}>
@@ -58,7 +60,7 @@ const Memories = () => {
                       {/* time and date */}
                       <p className={memoryStyles.memorytime}>{new Date(memory.createdAt).toDateString()}</p>
                     </div>
-                    <Link to={`/memories/${memory._id}`}>
+                    <Link to={`/memories/${memory.id}`}>
                       <img
                         src={`${imageDirectory}${memory.image}`}
                         alt=""

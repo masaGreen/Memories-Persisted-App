@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Users {
     @Id
-    String id;
+    String _id;
 
     
     private String username;
@@ -24,8 +24,8 @@ public class Users {
 
    
   
-    public Users(String id, String username, String email, String password, LocalDateTime createdAt, LocalDateTime updatedAt) {
-        this.id = id;
+    public Users(String _id, String username, String email, String password, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this._id = _id;
         this.username = username;
         this.email = email;
         this.password = password;
@@ -63,10 +63,10 @@ public class Users {
         this.password = password;
     }
     public String getId() {
-        return id;
+        return _id;
     }
     public void setId(String id) {
-        this.id = id;
+        this._id = id;
     }
     @Override
     public int hashCode() {

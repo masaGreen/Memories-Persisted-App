@@ -11,9 +11,10 @@ const CreateMoment = () => {
   const description = useRef("");
   const tagged = useRef("");
   const [notify, setNotify] = useState(false)
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+ 
 
   function handleFiling(e){
     setFile(e.target.files[0])
@@ -39,7 +40,8 @@ const CreateMoment = () => {
 
       try {
         await axios.post("http://localhost:8080/api", data);
-        navigate("/");
+   
+        
         e.target.reset();
       } catch (error) {
         setError(error);
@@ -47,18 +49,26 @@ const CreateMoment = () => {
 
       //post the data to backend
       try {
-        await axios.post("http://localhost:8080/imageupload", formData);
+        await axios.post("http://localhost:8080/api/imageupload", formData);
+        
+        setTimeout(() => {
+          navigate("/")
+        }, 500);
+        
+      } catch (error) {
+        setError(error);
+      }
+    }else{
+      try {
+        await axios.post("http://localhost:8080/api", data);
+        console.log("no file")
+        e.target.reset();
       } catch (error) {
         setError(error);
       }
     }
 
-    try {
-      await axios.post("http://localhost:8080/", data);
-      e.target.reset();
-    } catch (error) {
-      setError(error);
-    }
+    
   };
   return (
     <div className={createMomentStyles.formWrapper}>

@@ -13,8 +13,12 @@ public class JavabackendApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JavabackendApplication.class, args);
+
+
 		
 	}
+
+	
 
    
 

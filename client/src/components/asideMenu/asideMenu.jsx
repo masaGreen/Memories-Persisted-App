@@ -18,8 +18,9 @@ const AsideMenu = ()=>{
         setTag(tagged)
         dispatch({type:"LOAD_MOMENTS"})
         try {
-            
-            const response = await axios.get(`http://localhost:5000/api/?tag=${tag}`)
+            console.log("log")
+            const response = await axios.get(`http://localhost:8080/api?tag=${tag}`)
+            console.log(response.data)
             dispatch({type:"LOADING_SUCCESS", payload:response.data})
 
         } catch (error) {

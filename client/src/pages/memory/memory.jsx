@@ -17,7 +17,7 @@ const Memory = () => {
 
   useEffect(()=>{
     const fetchAmoment = async()=>{
-      const res = await axios.get("http://localhost:8080/"+id)
+      const res = await axios.get("http://localhost:8080/api/getmoment/"+id)
       setMemory(res.data)
     }
     fetchAmoment()
@@ -25,7 +25,7 @@ const Memory = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8080/api/${memory._id}`);
+      await axios.delete(`http://localhost:8080/api/${memory.id}`);
       navigate("/");
     } catch (error) {
       setError(error);
@@ -49,7 +49,7 @@ const Memory = () => {
               />
               
             </button>
-            <Link to={`/memories/memoryedit/${memory._id}`}>
+            <Link to={`/memories/memoryedit/${memory.id}`}>
               <button className={memoryStyles.iconbox} title="edit">
                 <EditIcon className={memoryStyles.edit} />
                 
@@ -59,7 +59,7 @@ const Memory = () => {
           <div className={memoryStyles.mainsection}>
             <div  className={memoryStyles.imgWrapper}>
               <img
-                src={`http://localhost:5000/${memory.image}`}
+                src={`http://localhost:8080/${memory.image}`}
                 alt=""
                 className={memoryStyles.memoryCardImg}
               />

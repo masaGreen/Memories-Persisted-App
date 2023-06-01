@@ -23,6 +23,7 @@ const Login = () => {
       if (response.data.username) setUser(true);
 
       navigate("/");
+      setUser(true)
       setShow(true)
       e.target.reset();
     } catch (error) {
