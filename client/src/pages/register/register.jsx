@@ -11,15 +11,17 @@ const Register = () => {
   const email =useRef("")
   const password = useRef("")
   const [error, setError] = useState()
+  
   const handleRegister = async(e)=>{
     e.preventDefault()
+    
     const user = {
       username:username.current.value,
       email:email.current.value,
       password:password.current.value,
     }
     try {
-      await axios.post("http://localhost:5000/register", user)
+      await axios.post("http://localhost:8080/register", user)
       navigate("/login")
       e.target.reset()
     } catch (error) {
